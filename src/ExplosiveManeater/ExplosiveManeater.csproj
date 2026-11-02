@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>com.sagtag.ExplosiveManeater</AssemblyName>
+    <AssemblyTitle>ExplosiveManeater</AssemblyTitle>
+    <RootNamespace>ExplosiveManeater</RootNamespace>
+    <RepositoryUrl></RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsThunderstorePackable>true</IsThunderstorePackable>
+    <ThunderstoreName>ExplosiveManeater</ThunderstoreName>
+    <ThunderstoreDescription>take care of the maneater or it will wipe every player in the lobby</ThunderstoreDescription>
+    <ThunderstoreCommunities>lethal-company</ThunderstoreCommunities>
+    <ThunderstoreCategories>mods;bepinex</ThunderstoreCategories>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ModFile Include="$(TargetPath)" Destination="plugins/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ThunderstorePackageFile Include="$(SolutionRoot)README.md" />
+    <ThunderstorePackageFile Include="$(SolutionRoot)CHANGELOG.md" />
+    <ThunderstorePackageFile Include="$(SolutionRoot)icon.png" />
+    <ThunderstorePackageFile Include="$(SolutionRoot)LICENSE" />
+    <ThunderstoreDependency Include="BepInEx-BepInExPack" Version="5.4.2305" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\AppData\Roaming\com.kesomannen.gale\lethal-company\profiles\ImperiumPerformance\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
